@@ -1,0 +1,36 @@
+{
+  "name": "service.sms.24hr",
+  "version": "0.0.0",
+  "description": "Sms service with autodiscovery and zmq for 46elks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/24hr-malmo/service.sms.git"
+  },
+  "keywords": [
+    "sms",
+    "46elks",
+    "zonar",
+    "zmq",
+    "service"
+  ],
+  "author": "Camilo Tapia <camilo.tapia@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/24hr-malmo/service.sms/issues"
+  },
+  "homepage": "https://github.com/24hr-malmo/service.sms",
+  "dependencies": {
+    "zonar": "^0.5.4",
+    "zmq": "^2.7.0",
+    "request": "^2.34.0"
+  },
+  "devDependencies": {
+    "mocha": "^1.18.2",
+    "should": "^3.3.1",
+    "sinon": "^1.9.1"
+  }
+}
