@@ -11,11 +11,11 @@ var address = "tcp://0.0.0.0:" + port;
 var helpAddress = "tcp://0.0.0.0:" + helpPort;
 
 // setup
-var broadcaster = zonar.create({ net: '24hr', name: 'sms.pub' });
+var broadcaster = zonar.create({ net: '24hr', name: 'sms' });
 
 var socket = zmq.socket('pub');
 
-broadcaster.payload = { 'pub': port, 'doc': helpPort };
+broadcaster.payload = { 'pub': port, 'doc': {type : "req", port : helpPort }};
 
 smsServer.init(function() {
 
@@ -26,7 +26,7 @@ smsServer.init(function() {
         console.log("SMS publishing service started");
 
         broadcaster.start(function() {
-            console.log("Broadcasting sms.pub");        
+            console.log("Broadcasting sms.pub");
         });
 
         smsServer.on('incoming', function(sms) {
@@ -76,10 +76,7 @@ helpSocket.bind(helpAddress, function(err) {
     if (err) throw err;
 
     helpSocket.on('message', function(data) {
-        socket.send(
-            ''
-            + ''
-        );
+        helpSocket.send(JSON.stringify({doc : 'sms serive is kickass!'}));
     });
 
 });
