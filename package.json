@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/24hr-malmo/service.sms",
   "dependencies": {
-    "zonar": "^0.5.4",
+    "zonar": "^0.5.6",
     "zmq": "^2.7.0",
     "request": "^2.34.0"
   },

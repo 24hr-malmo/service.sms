@@ -11,7 +11,8 @@ var address = "tcp://0.0.0.0:" + port;
 var helpAddress = "tcp://0.0.0.0:" + helpPort;
 
 // setup
-var broadcaster = zonar.create({ verbose: true, net: '24hr', name: 'sms.pub' });
+var broadcaster = zonar.create({ net: '24hr', name: 'sms.pub' });
+
 var socket = zmq.socket('pub');
 
 broadcaster.payload = { 'pub': port, 'doc': helpPort };
