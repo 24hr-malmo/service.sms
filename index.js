@@ -31,7 +31,6 @@ smsServer.init(function() {
 
         smsServer.on('incoming', function(sms) {
 
-            console.log(sms);
 
             if (sms.from) {
 
@@ -40,6 +39,8 @@ smsServer.init(function() {
                     if (result) {
                         sms.name = result;
                     }
+
+                    console.log(sms);
 
                     socket.send('all' + JSON.stringify(sms));
                     socket.send(sms.from + ' ' + JSON.stringify(sms));
