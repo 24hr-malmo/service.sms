@@ -31,7 +31,6 @@ smsServer.init(function() {
 
         smsServer.on('incoming', function(sms) {
 
-
             if (sms.from) {
 
                 scraper.get(sms.from, function(err, result) {
@@ -42,7 +41,7 @@ smsServer.init(function() {
 
                     console.log(sms);
 
-                    socket.send('all' + JSON.stringify(sms));
+                    socket.send('all ' + JSON.stringify(sms));
                     socket.send(sms.from + ' ' + JSON.stringify(sms));
 
                 });
